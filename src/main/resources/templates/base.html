@@ -1,0 +1,9 @@
+<!--We need to import namespace-->
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="parent-fragment" th:fragment="parent(content)">
+    <h1>This is my first thymeleaf fragment.</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus sapiente vero? Accusantium eos et eum
+        ex facere fugiat labore molestias nam nesciunt nihil nobis optio repellat, suscipit ullam?</p>
+    <div th:replace="${content}"></div>
+</div>
+</html>
