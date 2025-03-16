@@ -1,22 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Your Title Here</title>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <title>Home page</title>
 </head>
 <body>
-  <div class="bg-gray-200 w-1/2 p-4 flex flex-col space-y-3 mx-auto mt-4">
-    <h1 class="text-2xl font-bold" data-th-text="${name}">Welcome to Home Page</h1>
-      <p class="text-xl text-gray-700" data-th-text="${YTChannel}"/>
-      <a th:href="${YTChannel}">Click to open</a>
-    <p class="text-gray-600">Lorem Ipsum ahdsfjkhasdlkjgjlakdsg dsufgoiads og a dfgaoidsghdsoihgjlokas dasgoihdasg dasgojh</p>
-      <button class="px-3 py-3 bg-blue-700 text-white hover:bg-blue-200">Click Here</button>
-  </div>
+<div id="content">
+    <h1>Welcome to the Home Page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur distinctio, doloribus error esse explicabo
+        id illum, impedit iste maiores nihil optio perferendis placeat quis similique sint suscipit, unde vero
+        voluptatum.</p>
+</div>
+<script> console.log("This is the script tag passed from HOME page to base parent fragment.")</script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-
-
 </html>

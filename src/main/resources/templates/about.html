@@ -1,11 +1,15 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>About page</title>
 </head>
 <body>
-
+<div id="content">
+    <h1>Welcome to the about Page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur distinctio, doloribus error esse explicabo
+        id illum, impedit iste maiores nihil optio perferendis placeat quis similique sint suscipit, unde vero
+        voluptatum.</p>
+</div>
+<script> console.log("This is the script tag passed from about page to base parent fragment.")</script>
 </body>
 </html>

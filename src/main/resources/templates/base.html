@@ -1,9 +1,39 @@
-<!--We need to import namespace-->
-<html xmlns:th="http://www.thymeleaf.org">
-<div class="parent-fragment" th:fragment="parent(content)">
-    <h1>This is my first thymeleaf fragment.</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cumque ducimus sapiente vero? Accusantium eos et eum
-        ex facere fugiat labore molestias nam nesciunt nihil nobis optio repellat, suscipit ullam?</p>
-    <div th:replace="${content}"></div>
+<html lang="en"
+      class="light"
+      th:fragment="parent(content,title,script)"
+      xmlns:th="http://www.thymeleaf.org"
+
+>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <!--Font awesome CDN link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:replace="${title}">Smart Contacts</title>
+</head>
+<body class="h-screen w-full dark:bg-gray-900 bg-gray-100 dark:text-white">
+
+<!--Common Header-->
+
+<div data-th-replace="~{navbar :: navbar}" class="fixed" ></div>
+
+
+<!--main DYNAMIC content-->
+<div class="p-4 ">
+    <section data-th-replace="${content}"></section>
 </div>
+
+<!--Common footer-->
+<!--
+<footer class="p-4">Footer: Learning a new Java Spring Boot application.</footer>
+-->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script data-th-src="@{'/js/script.js'}"></script>
+<th:block data-th-replace="${script}"></th:block>
+</body>
 </html>
